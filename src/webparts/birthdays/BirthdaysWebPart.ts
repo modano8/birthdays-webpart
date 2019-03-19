@@ -21,7 +21,8 @@ export default class BirthdaysWebPart extends BaseClientSideWebPart<IBirthdaysWe
     const element: React.ReactElement<IBirthdaysProps > = React.createElement(
       Birthdays,
       {
-        description: this.properties.description
+        description: this.properties.description,
+        width: this.domElement.clientWidth
       }
     );
 

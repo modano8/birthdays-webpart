@@ -14,14 +14,6 @@
     padding: 20px;
   }
 
-  .column {
-    @include ms-Grid-col;
-    @include ms-sm12;
-    @include ms-md12;
-    @include ms-lg3;
-    
-  }
-
   .title {
     @include ms-font-xl;
     @include ms-fontColor-white;

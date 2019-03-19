@@ -17,8 +17,11 @@ import {
   EnvironmentType
 } from '@microsoft/sp-core-library';
 import { IUsers, IUser } from '../IUser';
+import { WebPartContext } from '@microsoft/sp-webpart-base';
 
 export default class Birthdays extends React.Component<IBirthdaysProps, IBirthdaysState> {
+
+  private _isVertical: boolean = this.props.width < 719;
 
   constructor(props: IBirthdaysProps) {
     super(props);
@@ -64,7 +67,7 @@ export default class Birthdays extends React.Component<IBirthdaysProps, IBirthda
 
   public render(): React.ReactElement<IBirthdaysProps> {
     const BirthdayCards: JSX.Element[] = this.state.users.map((prop: IUser) =>
-      <div className={styles.column}>
+      <div className={"ms-Grid-col ms-md12 ms-lg" + (this._isVertical ? "12" : "4")}>
         <Persona
           {...{
             imageUrl: prop.imageUrl,
